@@ -9,6 +9,7 @@ import Customize from "../screen/CustomizeScreen/Customize";
 import Story from "../screen/StoryScreen/Story";
 import SaveAndShare from "../screen/Save&ShareScreen/SaveAndShare";
 import Preview from "../screen/PreviewScreen/Preview";
+import Setting from "../screen/SettingScreen/Setting";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,11 +26,36 @@ const HomeRoutes = () => {
         name={ScreenName.Category}
         component={Category}
       />
-      <Stack.Screen name={ScreenName.AddMusic} component={AddMusic} />
-      <Stack.Screen name={ScreenName.Customize} component={Customize} />
-      <Stack.Screen name={ScreenName.Story} component={Story} />
-      <Stack.Screen name={ScreenName.SaveAndShare} component={SaveAndShare} />
-      <Stack.Screen name={ScreenName.Preview} component={Preview} />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={ScreenName.AddMusic}
+        component={AddMusic}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={ScreenName.Customize}
+        component={Customize}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={ScreenName.Story}
+        component={Story}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={ScreenName.SaveAndShare}
+        component={SaveAndShare}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={ScreenName.Preview}
+        component={Preview}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={ScreenName.Setting}
+        component={Setting}
+      />
     </Stack.Navigator>
   );
 };

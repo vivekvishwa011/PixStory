@@ -7,6 +7,7 @@ export const ScreenName = {
   Story: "Story",
   SaveAndShare: "SaveAndShare",
   Preview: "Preview",
+  Setting: "Setting",
 };
 export const NavigationNames = {
   HomeRoutes: "HomeRoute",

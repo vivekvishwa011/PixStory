@@ -1,17 +1,7 @@
-<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_1_101)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.26037 8.2101C5.33802 8.01649 2.49567 6.49985 2.49567 3.77312C2.49567 3.34983 2.63378 2.93727 2.89045 2.59388C3.14712 2.25048 3.50934 1.99367 3.92578 1.85981C4.34222 1.72596 4.79179 1.72184 5.21079 1.84805C5.62979 1.97427 5.99699 2.22441 6.26037 2.56304C6.52375 2.22441 6.89095 1.97427 7.30996 1.84805C7.72896 1.72184 8.17852 1.72596 8.59497 1.85981C9.01141 1.99367 9.37362 2.25048 9.63029 2.59388C9.88696 2.93727 10.0251 3.34983 10.0251 3.77312C10.0251 6.49985 7.18273 8.01649 6.26037 8.2101ZM6.26037 7.40338C7.56547 7.02825 9.18848 5.46522 9.18848 3.77312C9.18848 3.45219 9.05626 3.1444 8.82093 2.91747C8.58559 2.69053 8.2664 2.56304 7.93358 2.56304C7.38769 2.56304 6.8301 2.89904 6.26037 3.57144C5.69065 2.89904 5.13305 2.56304 4.58717 2.56304C4.25435 2.56304 3.93516 2.69053 3.69982 2.91747C3.46448 3.1444 3.33227 3.45219 3.33227 3.77312C3.33227 5.46522 4.95527 7.02825 6.26037 7.40338Z" fill="white"/>
-</g>
-<defs>
-<filter id="filter0_d_1_101" x="0.495667" y="0.756317" width="11.5294" height="10.4538" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="1"/>
-<feGaussianBlur stdDeviation="1"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_101"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_101" result="shape"/>
-</filter>
-</defs>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+</svg>
