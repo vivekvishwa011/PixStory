@@ -53,7 +53,7 @@ const HorizontalCardScroller = ({ data = [], onPress }) => {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
               padding: wp(1),
               borderRadius: hp(50),
-              zIndex: 1, // important to make sure this is clickable over image
+              zIndex: 1,
             }}
           >
             <Image
