@@ -18,6 +18,7 @@ import LikeIcon2 from "../../assets/Icon/LikeIcon2.svg";
 import BackArrowIcon from "../../assets/Icon/BackArrowIcon.svg";
 import infoIcon from "../../assets/Icon/infoIcon.svg";
 import sliderImage2 from "../../assets/Icon/sliderImage2.png";
+import shareIcon from "../../assets/Icon/shareIcon.svg";
 export const Icon = {
   PixStoryIcon: PixStoryIcon,
   settingIcon: settingIcon,
@@ -39,4 +40,5 @@ export const Icon = {
   BackArrowIcon: BackArrowIcon,
   infoIcon: infoIcon,
   sliderImage2: sliderImage2,
+  shareIcon: shareIcon,
 };

@@ -5,6 +5,7 @@ import HeaderComponent from "../../components/HeaderComponent";
 import { Icon } from "../../constants/Icon";
 import CustomBtn from "../../components/CustomBtn";
 import { Image } from "expo-image";
+import { ScreenName } from "../../constants/ScreenName";
 
 const Preview = ({ navigation }) => {
   const handleBack = () => {
@@ -23,7 +24,6 @@ const Preview = ({ navigation }) => {
           marginTop: hp(4),
           width: wp(82),
           height: hp(72),
-          // borderWidth: 1,
           borderRadius: hp(2),
           alignSelf: "center",
           overflow: "hidden",
@@ -40,7 +40,7 @@ const Preview = ({ navigation }) => {
       <CustomBtn
         title={"Customize Template"}
         titleStyle={{ fontSize: hp(2), fontWeight: "600" }}
-        onPressHandler={() => {}}
+        onPressHandler={() => navigation.navigate(ScreenName.Customize)}
         isLoading={false}
         Customstyle={{ marginTop: hp(2) }}
       />
