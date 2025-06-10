@@ -15,7 +15,6 @@ import BottomSheet, {
 } from "@gorhom/bottom-sheet";
 import { Icon } from "../../constants/Icon";
 import { commonStyle, hp, wp } from "../../constants/commonStyle";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const Customize = ({ navigation }) => {
   const [bottomViewDetailsHeight, setBottomViewDetailsHeight] = useState(1);
@@ -37,7 +36,7 @@ const Customize = ({ navigation }) => {
     musicRef.current?.expand();
   };
   const handleCloseIcon = () => {
-    CloseBtnRef.current?.close();
+    CloseBtnRef.current?.expand();
   };
 
   const renderBackdrop = useCallback(
@@ -55,13 +54,13 @@ const Customize = ({ navigation }) => {
     <SafeAreaView style={commonStyle.container}>
       {/* Header */}
       <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.iconContainer}>
+        <Pressable style={styles.iconContainer}>
           <Image
             source={Icon.BackArrowIcon}
             style={styles.icon}
             contentFit="contain"
           />
-        </TouchableOpacity>
+        </Pressable>
 
         <View style={styles.centerContainer}>
           <Image
@@ -104,7 +103,7 @@ const Customize = ({ navigation }) => {
           backgroundColor: "#e0e0e0",
         }}
       >
-        <Pressable
+        <TouchableOpacity
           onPress={handleCloseIcon}
           style={{
             position: "absolute",
@@ -123,7 +122,7 @@ const Customize = ({ navigation }) => {
               tintColor: "white",
             }}
           />
-        </Pressable>
+        </TouchableOpacity>
       </View>
 
       {/* Label */}
@@ -178,6 +177,101 @@ const Customize = ({ navigation }) => {
           <Text style={{ fontWeight: "600" }}>Change Music</Text>
         </Pressable>
       </View>
+
+      {/* Close Bottom Sheet */}
+      <BottomSheet
+        snapPoints={[bottomViewCloseHeight + hp(4)]}
+        ref={CloseBtnRef}
+        onChange={handleSheetChanges}
+        index={-1}
+        enablePanDownToClose={true}
+        backdropComponent={renderBackdrop}
+      >
+        <BottomSheetView
+          onLayout={({ nativeEvent: { layout } }) => {
+            setBottomViewCloseHeight(layout.height);
+          }}
+          style={styles.contentContainer}
+        >
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "row",
+            }}
+          >
+            <View style={{}}>
+              <Text style={{ fontWeight: "600", fontSize: hp(2) }}>
+                Remove Watermark
+              </Text>
+            </View>
+            <Pressable
+              style={{
+                position: "absolute",
+                right: hp(0),
+              }}
+            >
+              <Image
+                source={Icon.closeIcon}
+                style={{ width: wp(6), height: wp(6) }}
+              />
+            </Pressable>
+          </View>
+          <LinearGradient
+            colors={["#FFAB0E", "#FF28DF"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{
+              marginTop: hp(5),
+              marginHorizontal: hp(2),
+              backgroundColor: "red",
+              padding: hp(2),
+              borderRadius: hp(4),
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "center",
+              gap: wp(2),
+            }}
+          >
+            <Image
+              source={Icon.videoIcon}
+              style={{ width: wp(5), height: wp(5), alignSelf: "center" }}
+            />
+            <Text
+              style={{ color: "white", fontWeight: "600", alignSelf: "center" }}
+            >
+              Watch Video Ad
+            </Text>
+          </LinearGradient>
+          <View style={{ alignItems: "center", marginTop: hp(2) }}>
+            <Text style={{ fontWeight: "semibold", fontSize: hp(2) }}>Or</Text>
+          </View>
+          <View
+            // colors={["#FFAB0E", "#FF28DF"]}
+            // start={{ x: 0, y: 0 }}
+            // end={{ x: 1, y: 0 }}
+            style={{
+              marginTop: hp(2),
+              marginHorizontal: hp(2),
+              backgroundColor: "#FFD801",
+              padding: hp(2),
+              borderRadius: hp(4),
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "center",
+              gap: wp(2),
+            }}
+          >
+            <Image
+              source={Icon.crownIcon2}
+              style={{ width: wp(5), height: wp(5), alignSelf: "center" }}
+            />
+            <Text style={{ fontWeight: "500", alignSelf: "center" }}>
+              Buy Subscription
+            </Text>
+          </View>
+        </BottomSheetView>
+      </BottomSheet>
 
       {/* Change Image Bottom Sheet */}
       <BottomSheet
@@ -334,7 +428,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: hp(1),
-    marginTop: wp(9),
+    marginTop: wp(10),
     marginVertical: wp(2),
   },
   iconContainer: {
@@ -347,12 +441,12 @@ const styles = StyleSheet.create({
   icon: {
     width: wp(8),
     height: wp(8),
-    marginLeft: wp(2.5),
-    justifyContent: "space-between",
+    // marginLeft: wp(2.5),
+    // justifyContent: "space-between",
   },
   SaveContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: hp(1.5),
     paddingVertical: wp(1.5),

@@ -24,6 +24,8 @@ import galleryIcon from "../../assets/Icon/galleryIcon.svg";
 import soundIcon from "../../assets/Icon/soundIcon.svg";
 import headphoneIcon from "../../assets/Icon/headphoneIcon.svg";
 import musicIcon from "../../assets/Icon/musicIcon.svg";
+import videoIcon from "../../assets/Icon/videoIcon.svg";
+import crownIcon2 from "../../assets/Icon/crownIcon2.svg";
 
 export const Icon = {
   PixStoryIcon: PixStoryIcon,
@@ -52,4 +54,6 @@ export const Icon = {
   soundIcon: soundIcon,
   headphoneIcon: headphoneIcon,
   musicIcon: musicIcon,
+  videoIcon: videoIcon,
+  crownIcon2: crownIcon2,
 };
