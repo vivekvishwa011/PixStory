@@ -19,6 +19,12 @@ import BackArrowIcon from "../../assets/Icon/BackArrowIcon.svg";
 import infoIcon from "../../assets/Icon/infoIcon.svg";
 import sliderImage2 from "../../assets/Icon/sliderImage2.png";
 import shareIcon from "../../assets/Icon/shareIcon.svg";
+import closeIcon from "../../assets/Icon/closeIcon.svg";
+import galleryIcon from "../../assets/Icon/galleryIcon.svg";
+import soundIcon from "../../assets/Icon/soundIcon.svg";
+import headphoneIcon from "../../assets/Icon/headphoneIcon.svg";
+import musicIcon from "../../assets/Icon/musicIcon.svg";
+
 export const Icon = {
   PixStoryIcon: PixStoryIcon,
   settingIcon: settingIcon,
@@ -41,4 +47,9 @@ export const Icon = {
   infoIcon: infoIcon,
   sliderImage2: sliderImage2,
   shareIcon: shareIcon,
+  closeIcon: closeIcon,
+  galleryIcon: galleryIcon,
+  soundIcon: soundIcon,
+  headphoneIcon: headphoneIcon,
+  musicIcon: musicIcon,
 };
