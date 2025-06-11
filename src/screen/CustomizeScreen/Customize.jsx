@@ -15,15 +15,33 @@ import BottomSheet, {
 } from "@gorhom/bottom-sheet";
 import { Icon } from "../../constants/Icon";
 import { commonStyle, hp, wp } from "../../constants/commonStyle";
+import { FlashList } from "@shopify/flash-list";
 
 const Customize = ({ navigation }) => {
-  const [bottomViewDetailsHeight, setBottomViewDetailsHeight] = useState(1);
+  const [imageData, setImageData] = useState([
+    { id: "1", uri: Icon.sliderImage },
+    { id: "2", uri: Icon.sliderImage },
+    { id: "3", uri: Icon.sliderImage },
+    { id: "4", uri: Icon.sliderImage },
+    { id: "5", uri: Icon.sliderImage },
+    { id: "6", uri: Icon.sliderImage },
+  ]);
+  const [bottomViewDetailsHeight, setBottomViewDetailsHeight] = useState(
+    hp(30)
+  );
+
   const [bottomViewMusicHeight, setBottomViewMusicHeight] = useState(1);
   const [bottomViewCloseHeight, setBottomViewCloseHeight] = useState(1);
+  const [bottomViewTextHeight, setBottomViewTextHeight] = useState(1);
 
   const detailsRef = useRef(null);
   const musicRef = useRef(null);
   const CloseBtnRef = useRef(null);
+  const TextRef = useRef(null);
+  const snapPoints = useMemo(
+    () => [bottomViewDetailsHeight + hp(2)],
+    [bottomViewDetailsHeight]
+  );
 
   const handleSheetChanges = useCallback((index) => {
     console.log("Bottom sheet index:", index);
@@ -37,6 +55,9 @@ const Customize = ({ navigation }) => {
   };
   const handleCloseIcon = () => {
     CloseBtnRef.current?.expand();
+  };
+  const handleText = () => {
+    TextRef.current?.expand();
   };
 
   const renderBackdrop = useCallback(
@@ -62,13 +83,13 @@ const Customize = ({ navigation }) => {
           />
         </Pressable>
 
-        <View style={styles.centerContainer}>
+        <Pressable style={styles.centerContainer}>
           <Image
             source={Icon.showEyeIcon}
             style={styles.icon}
             contentFit="contain"
           />
-        </View>
+        </Pressable>
 
         <TouchableOpacity>
           <LinearGradient
@@ -138,13 +159,31 @@ const Customize = ({ navigation }) => {
 
       <View
         style={{
-          marginHorizontal: wp(18),
+          marginHorizontal: wp(2),
+          gap: hp(1),
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "center",
+          backgroundColor: "red",
         }}
       >
         <Pressable
           onPress={handleChangeImage}
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "white",
+            padding: hp(1),
+            borderRadius: hp(2),
+          }}
+        >
+          <Image
+            source={Icon.galleryIcon}
+            style={{ width: wp(8), height: wp(8) }}
+          />
+          <Text style={{ fontWeight: "600" }}>Change Image</Text>
+        </Pressable>
+        <Pressable
+          onPress={handleText}
           style={{
             alignItems: "center",
             justifyContent: "center",
@@ -154,10 +193,10 @@ const Customize = ({ navigation }) => {
           }}
         >
           <Image
-            source={Icon.galleryIcon}
+            source={Icon.textIcon}
             style={{ width: wp(8), height: wp(8) }}
           />
-          <Text style={{ fontWeight: "600" }}>Change Image</Text>
+          <Text style={{ fontWeight: "600" }}>Change Text</Text>
         </Pressable>
 
         <Pressable
@@ -180,7 +219,7 @@ const Customize = ({ navigation }) => {
 
       {/* Close Bottom Sheet */}
       <BottomSheet
-        snapPoints={[bottomViewCloseHeight + hp(4)]}
+        snapPoints={snapPoints}
         ref={CloseBtnRef}
         onChange={handleSheetChanges}
         index={-1}
@@ -275,7 +314,7 @@ const Customize = ({ navigation }) => {
 
       {/* Change Image Bottom Sheet */}
       <BottomSheet
-        snapPoints={[bottomViewDetailsHeight + hp(4)]}
+        snapPoints={snapPoints}
         ref={detailsRef}
         onChange={handleSheetChanges}
         index={-1}
@@ -319,8 +358,113 @@ const Customize = ({ navigation }) => {
               </LinearGradient>
             </TouchableOpacity>
           </View>
+
+          {/* <View
+            style={{
+              marginTop: hp(2),
+              width: wp(20),
+              height: wp(20),
+              borderRadius: hp(1),
+              overflow: "hidden",
+            }}
+          >
+            <Pressable>
+              <Image
+                source={Icon.sliderImage}
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Pressable>
+          </View> */}
+          <View style={{ height: wp(22), marginTop: hp(2) }}>
+            <FlashList
+              data={[
+                Icon.sliderImage,
+                Icon.sliderImage,
+                Icon.sliderImage,
+                Icon.sliderImage,
+                Icon.sliderImage,
+                Icon.sliderImage,
+                Icon.sliderImage,
+                Icon.sliderImage,
+              ]}
+              renderItem={({ item }) => (
+                <View
+                  style={{
+                    marginRight: wp(2),
+                    width: wp(15.8),
+                    height: wp(16),
+                    borderRadius: hp(1),
+                    overflow: "hidden",
+                  }}
+                >
+                  <Pressable>
+                    <Image
+                      source={item}
+                      style={{ width: "100%", height: "100%" }}
+                      contentFit="cover"
+                    />
+                  </Pressable>
+                </View>
+              )}
+              estimatedItemSize={wp(22)}
+              keyExtractor={(_, index) => index.toString()}
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              scrollEnabled
+            />
+          </View>
         </BottomSheetView>
       </BottomSheet>
+
+      {/* Change Text Bottom Sheet */}
+      <BottomSheet
+        snapPoints={[bottomViewTextHeight + hp(4)]}
+        ref={TextRef}
+        onChange={handleSheetChanges}
+        index={-1}
+        enablePanDownToClose={true}
+        backdropComponent={renderBackdrop}
+      >
+        <BottomSheetView
+          onLayout={({ nativeEvent: { layout } }) => {
+            setBottomViewTextHeight(layout.height);
+          }}
+          style={styles.contentContainer}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontWeight: "600", fontSize: hp(2) }}>
+              Change Text Details
+            </Text>
+
+            <TouchableOpacity>
+              <LinearGradient
+                colors={["#FFAB0E", "#FF28DF"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={styles.SaveContainer}
+              >
+                <Text
+                  style={{
+                    paddingHorizontal: hp(1),
+                    color: "white",
+                    paddingVertical: wp(0.5),
+                    fontWeight: "600",
+                  }}
+                >
+                  Done
+                </Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          </View>
+        </BottomSheetView>
+      </BottomSheet>
+
       {/* Change Music Bottom Sheet */}
       <BottomSheet
         snapPoints={[bottomViewMusicHeight + hp(4)]}
@@ -437,16 +581,15 @@ const styles = StyleSheet.create({
   centerContainer: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "center",
+    marginLeft: wp(8.5),
   },
   icon: {
     width: wp(8),
     height: wp(8),
-    // marginLeft: wp(2.5),
-    // justifyContent: "space-between",
   },
   SaveContainer: {
     flexDirection: "row",
-    // justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: hp(1.5),
     paddingVertical: wp(1.5),
