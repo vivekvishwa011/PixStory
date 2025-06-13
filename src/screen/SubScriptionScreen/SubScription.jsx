@@ -1,11 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import HeaderComponent from "../../components/HeaderComponent";
+import { commonStyle } from "../../constants/commonStyle";
 
-const SubScription = () => {
+const SubScription = ({ navigation }) => {
+  const handleBack = () => {
+    navigation.goBack();
+  };
   return (
-    <View>
-      <Text>SubScription</Text>
-    </View>
+    <SafeAreaView style={commonStyle.container}>
+      <HeaderComponent handleBack={handleBack} title={"Subscription"} />
+    </SafeAreaView>
   );
 };
 
