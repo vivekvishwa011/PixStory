@@ -1,14 +1,13 @@
-import { SafeAreaView, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import HeaderComponent from "../../components/HeaderComponent";
-import { commonStyle, hp } from "../../constants/commonStyle";
-import { FlashList } from "@shopify/flash-list";
-import { Icon } from "../../constants/Icon";
-import { ScreenName } from "../../constants/ScreenName";
 import CategoryCard from "../../components/CategoryCard";
+import { Icon } from "../../constants/Icon";
+import { SafeAreaView } from "react-native";
+import { commonStyle, hp, wp } from "../../constants/commonStyle";
+import { FlashList } from "@shopify/flash-list";
+import HeaderComponent from "../../components/HeaderComponent";
 
-const Category = ({ navigation }) => {
-  // Dummy data simulating backend response
+const Myfavorite = () => {
   const imageData = [
     {
       id: "1",
@@ -24,7 +23,7 @@ const Category = ({ navigation }) => {
     },
     {
       id: "3",
-      image: Icon.sliderImage3,
+      image: Icon.sliderImage,
       viewCount: 90,
       downloadCount: 34,
     },
@@ -58,8 +57,8 @@ const Category = ({ navigation }) => {
       onPress={() => navigation.navigate(ScreenName.Preview, { index })}
       viewCount={item.viewCount.toString()}
       downloadCount={item.downloadCount.toString()}
-      likeIcon={Icon.LikeIcon}
-      likedIcon={Icon.LikeIcon2}
+      likeIcon={Icon.deleteIcon}
+      likedIcon={Icon.deleteIcon}
       viewIcon={Icon.showEyeIcon}
       downloadIcon={Icon.downloadIcon}
     />
@@ -67,7 +66,7 @@ const Category = ({ navigation }) => {
 
   return (
     <SafeAreaView style={commonStyle.container}>
-      <HeaderComponent title={"Category"} handleBack={handleBack} />
+      <HeaderComponent handleBack={handleBack} title={"My Favorite"} />
       <FlashList
         data={imageData}
         renderItem={renderItem}
@@ -84,6 +83,6 @@ const Category = ({ navigation }) => {
   );
 };
 
-export default Category;
+export default Myfavorite;
 
 const styles = StyleSheet.create({});

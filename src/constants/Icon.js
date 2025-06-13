@@ -27,6 +27,15 @@ import musicIcon from "../../assets/Icon/musicIcon.svg";
 import videoIcon from "../../assets/Icon/videoIcon.svg";
 import crownIcon2 from "../../assets/Icon/crownIcon2.svg";
 import textIcon from "../../assets/Icon/textIcon.svg";
+import folderIcon from "../../assets/Icon/folderIcon.svg";
+import favoriteIcon from "../../assets/Icon/favouriteIcon.svg";
+import starIcon from "../../assets/Icon/starIcon.svg";
+import plusIcon from "../../assets/Icon/plusIcon.svg";
+import contactUsIcon from "../../assets/Icon/ContactUsIcon.svg";
+import shieldIcon from "../../assets/Icon/shieldIcon.svg";
+import bookIcon from "../../assets/Icon/bookIcon.svg";
+import arrowIcon from "../../assets/Icon/arrowIcon.svg";
+import deleteIcon from "../../assets/Icon/deleteIcon.svg";
 
 export const Icon = {
   PixStoryIcon: PixStoryIcon,
@@ -58,4 +67,13 @@ export const Icon = {
   videoIcon: videoIcon,
   crownIcon2: crownIcon2,
   textIcon: textIcon,
+  folderIcon: folderIcon,
+  favoriteIcon: favoriteIcon,
+  starIcon: starIcon,
+  plusIcon: plusIcon,
+  contactUsIcon: contactUsIcon,
+  shieldIcon: shieldIcon,
+  bookIcon: bookIcon,
+  arrowIcon: arrowIcon,
+  deleteIcon: deleteIcon,
 };
